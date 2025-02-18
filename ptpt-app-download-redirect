@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>앱 다운로드</title>
+    <script>
+        function detectAndRedirect() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.semicolons.pitterpetter&hl=ko';
+            }
+            
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://apps.apple.com/kr/app/%ED%94%BC%ED%84%B0%ED%8E%98%ED%84%B0/id6444510865';
+            }
+        }
+    </script>
+</head>
+<body onload="detectAndRedirect()">
+    <h1>앱 다운로드 페이지</h1>
+    <p>기기에 맞는 앱 스토어로 리다이렉트 중입니다...</p>
+    <p>리다이렉트되지 않는 경우, 아래 링크를 클릭하세요:</p>
+    <ul>
+        <li><a href="https://play.google.com/store/apps/details?id=com.semicolons.pitterpetter&hl=ko">Android 앱 다운로드</a></li>
+        <li><a href="https://apps.apple.com/kr/app/%ED%94%BC%ED%84%B0%ED%8E%98%ED%84%B0/id6444510865">iOS 앱 다운로드</a></li>
+    </ul>
+</body>
+</html>
